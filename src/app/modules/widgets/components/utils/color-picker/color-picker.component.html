@@ -1,0 +1,10 @@
+<div class="color-picker">
+    <ng-container *ngFor="let color of colors">
+        <!-- Each color block -->
+        <div class="color-block" 
+             [ngClass]="{'selected': selectedColor === color}" 
+             [style.background]="'var(--custom-theme-' + color + ')'"
+             (click)="onColorSelect(color)">
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,38 @@
+<div class="card-block">
+    <div class="card-header" 
+    [ngClass]="{'inversed-colors': card.selectedColor === 'white' || card.selectedColor === 'beige'}"
+    [style]="'background: var(--custom-theme-' + card.selectedColor + ')'">
+        <div class="card-logo">
+            <logo></logo>
+            <company-name></company-name>
+        </div>
+        <div class="widget-main-info">
+            <h2>This product {{card.action}}</h2>
+            <h1>{{card.amount}} {{card.type}}</h1>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-body-row">
+            <div class="link-to-public-profile-label">
+                Link to Public Profile
+                <mat-icon class="link-tooltip-icon">info_outline</mat-icon>
+            </div>
+            <mat-checkbox class="link-to-public-profile" 
+                [checked]="card.linked" color='primary'
+                (change)="linkToPublicProfileSetted($event.checked)">
+            </mat-checkbox>
+        </div>
+        <div class="card-body-row">
+            Badge colour
+            <app-color-picker [selectedColor]="card.selectedColor" 
+            (colorChanged)="selectedColorChanged($event)"></app-color-picker>
+
+        </div>
+        <div class="card-body-row">
+            Activate badge
+            <mat-slide-toggle [checked]="card.active"
+             (change)="activateBudget($event.checked)"
+             color='primary'></mat-slide-toggle>
+        </div>
+    </div>
+</div>

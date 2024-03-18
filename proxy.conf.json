@@ -1,0 +1,8 @@
+{
+    "/v2/016d11e8/*": {
+        "target": "https://api.mocki.io",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}
