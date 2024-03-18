@@ -1,7 +1,6 @@
 <div class="card-block">
-    <div class="card-header" 
-         [ngClass]="{'inversed-colors': isColorInverted(card.selectedColor)}"
-         [style.background]="'var(--custom-theme-' + card.selectedColor + ')'">
+    <div class="card-header" [ngClass]="{'inversed-colors': isColorInverted(card.selectedColor)}"
+        [style.background]="'var(--custom-theme-' + card.selectedColor + ')'">
         <div class="card-logo">
             <logo></logo>
             <company-name></company-name>
@@ -15,24 +14,28 @@
         <div class="card-body-row">
             <div class="link-to-public-profile-label">
                 Link to Public Profile
-                <mat-icon class="link-tooltip-icon">info_outline</mat-icon>
+                <mat-icon class="link-tooltip-icon tooltip" (mouseover)="showTooltip()"
+                    (mouseout)="hideTooltip()">info_outline</mat-icon>
             </div>
-            <mat-checkbox class="link-to-public-profile" 
-                          [checked]="card.linked" color='primary'
-                          (change)="linkToPublicProfileSetted($event.checked)">
+
+            <div class="tooltiptext" id="tooltip">
+                This widget links directly to your public profile so that you can easily share your impact with your customers. Turn it off here if you do not want the badge to link to it.
+                 <p href="#">View Public Profile</p>
+                </div>
+
+
+            <mat-checkbox class="link-to-public-profile" [checked]="card.linked" color='primary'
+                (change)="linkToPublicProfileSetted($event.checked)">
             </mat-checkbox>
         </div>
         <div class="card-body-row">
             Badge colour
-            <app-color-picker [selectedColor]="card.selectedColor" 
-                              (colorChanged)="selectedColorChanged($event)">
+            <app-color-picker [selectedColor]="card.selectedColor" (colorChanged)="selectedColorChanged($event)">
             </app-color-picker>
         </div>
         <div class="card-body-row">
             Activate badge
-            <mat-slide-toggle [checked]="card.active"
-                              (change)="activateBudget($event.checked)"
-                              color='primary'>
+            <mat-slide-toggle [checked]="card.active" (change)="activateBudget($event.checked)" color='primary'>
             </mat-slide-toggle>
         </div>
     </div>

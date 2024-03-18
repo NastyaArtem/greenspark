@@ -40,4 +40,22 @@ export class WidgetCardComponent implements OnInit {
   isColorInverted(color: string): boolean {
     return color === 'white' || color === 'beige';
   }
+
+  showTimeout: NodeJS.Timeout;
+  hideTimeout: NodeJS.Timeout;
+  
+  showTooltip(): void {
+    console.log("showTooltip")
+    clearTimeout(this.hideTimeout);
+    this.showTimeout = setTimeout(() => {
+        document.getElementById("tooltip")?.classList.add("show");
+    }, 200);
+}
+
+hideTooltip(): void {
+    clearTimeout(this.showTimeout);
+    this.hideTimeout = setTimeout(() => {
+        document.getElementById("tooltip")?.classList.remove("show");
+    }, 300);
+}
 }

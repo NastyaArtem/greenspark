@@ -7,6 +7,7 @@ import { WidgetsRoutingModule } from './widgets-routing.module';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { ColorPickerComponent } from './components/utils/color-picker/color-picker.component';
 
@@ -24,6 +25,7 @@ import { ColorPickerComponent } from './components/utils/color-picker/color-pick
     MatCheckboxModule,
     MatSlideToggleModule,
     MatIconModule,
+    MatTooltipModule,
     HttpClientModule
   ],
   exports: [
