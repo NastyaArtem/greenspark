@@ -1,16 +1,11 @@
-
 <ng-container *ngIf="loadedWidgets$ | async as widgets">
-
-    <div class="cards-dashboard-header"></div>
-
-    <div class="cards-dashboard-body">
-
-        <ng-container *ngFor="let widget of widgets">
-            <app-widget-card [card]="widget">
-    
-            </app-widget-card>
-        </ng-container>
+    <div class="cards-dashboard-header">
+        Per product widgets
     </div>
 
-    
+    <div class="cards-dashboard-body">
+        <ng-container *ngFor="let widget of widgets">
+            <app-widget-card [card]="widget"></app-widget-card>
+        </ng-container>
+    </div>
 </ng-container>

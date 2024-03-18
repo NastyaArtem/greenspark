@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WirgetRestService } from '../../services/wirget-rest.service';
+import { WidgetRestService } from '../../services/widget-rest.service';
 import { Observable, map, tap } from 'rxjs';
 import { Widget } from '../../models/widget';
 import { ActiveBadgeService } from '../../services/active-badge.service';
@@ -11,13 +11,12 @@ import { ActiveBadgeService } from '../../services/active-badge.service';
 })
 export class WidgetsDashboardComponent implements OnInit {
 
-  constructor(private widgetRestService: WirgetRestService) { }
+  constructor(private widgetRestService: WidgetRestService) { }
 
   loadedWidgets$: Observable<Widget[]>;
 
   ngOnInit(): void {
-
+    // Fetch widgets from service
     this.loadedWidgets$ = this.widgetRestService.getWidgets();
   }
-
 }

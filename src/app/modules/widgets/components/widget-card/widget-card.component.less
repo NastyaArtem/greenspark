@@ -11,11 +11,9 @@
     padding: 10px 12px;
     color: #F9F9F9;
 
-    &.inversed-colors{
+    &.inversed-colors {
         color: var(--custom-theme-green);
-    
     }
-
 
     & .card-logo {
         margin-right: 10px;
@@ -58,9 +56,9 @@
     width: 12px;
     height: 12px;
     font-size: 12px;
-
 }
 
+/* Styles for Angular Material components */
 ::ng-deep {
     &.mat-checkbox-checked.mat-primary .mat-checkbox-background {
         background-color: var(--custom-theme-green) !important;
@@ -87,37 +85,36 @@
 
     }
 
-    & .mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb{
+    & .mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
         background: #F9F9F9;
         border: 0.68px solid var(--custom-theme-green);
         box-shadow: 0px 0px 1.3672161102294922px 0px #00000059;
 
     }
 
-    & .mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar{
+    & .mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
         background: var(--custom-theme-green);
         border: 0.68px solid #B0B0B0
     }
 
     & .mat-slide-toggle-bar:hover .mat-slide-toggle-persistent-ripple,
-    & .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{ 
+    & .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple {
         opacity: 0.5 !important;
     }
 
-     & .mat-slide-toggle .mat-slide-toggle-ripple{
+    & .mat-slide-toggle .mat-slide-toggle-ripple {
         z-index: -1 !important;
         top: calc(50% - 16px) !important;
         left: calc(50% - 16px) !important;
         height: 33.5px !important;
         width: 33.5px !important;
-     }
+    }
 
-     & .mat-slide-toggle .mat-slide-toggle-ripple, & .mat-checkbox .mat-checkbox-ripple{
+    & .mat-slide-toggle .mat-slide-toggle-ripple,
+    & .mat-checkbox .mat-checkbox-ripple {
 
-        & .mat-ripple-element{
+        & .mat-ripple-element {
             background: #AFC6BD !important;
-         }
-
-     }
-
+        }
+    }
 }

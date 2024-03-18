@@ -13,18 +13,15 @@ export class WidgetCardComponent implements OnInit {
   @Input() card: Widget;
 
   constructor(private activeBadgeService: ActiveBadgeService) { }
-  
 
   ngOnInit(): void {
+    // Subscribe to active card changes
     this.activeBadgeService.activeCardId$.subscribe(id => {
-      console.log(id)
-      this.card.active = id === this.card.id
-    })
-    console.log(this.card)
+      this.card.active = id === this.card.id;
+    });
   }
 
-  linkToPublicProfileSetted(value: boolean){
-    console.log(value);
+  linkToPublicProfileSetted(value: boolean): void {
     this.card.linked = value;
   }
 
@@ -33,9 +30,14 @@ export class WidgetCardComponent implements OnInit {
   }
 
   activateBudget(value: boolean): void {
-    if(value){
+    if (value) {
+      // Set current card as active
       this.activeBadgeService.setActiveCard(this.card.id);
     }
   }
 
+  // Function to determine if the color needs to be inverted on card header
+  isColorInverted(color: string): boolean {
+    return color === 'white' || color === 'beige';
+  }
 }

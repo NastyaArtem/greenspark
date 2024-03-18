@@ -8,7 +8,7 @@ const GET_WIDGETS_URL = '/v2/016d11e8/product-widgets'
 @Injectable({
   providedIn: 'root'
 })
-export class WirgetRestService {
+export class WidgetRestService {
   
   constructor(private httpClient: HttpClient) { }
 
