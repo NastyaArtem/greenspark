@@ -1,27 +1,37 @@
-# Greenspark
+This repository contains an Angular application for viewing and managing widgets on a dashboard.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+Components
+1. Color Picker Component
+Purpose:
+Allows users to select a color for a widget badge.
 
-## Development server
+Functionality:
+Displays a set of color blocks.
+User can click on a color block to select it.
+Emits an event when a color is selected.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Widget Card Component
+Purpose:
+Represents a widget card on the dashboard.
 
-## Code scaffolding
+Functionality:
+Displays widget information including action, amount, and type.
+Allows linking to a public profile.
+Allows setting badge color using the Color Picker Component.
+Allows activating or deactivating the widget (when one is activated, the other is deactivated).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Widgets Dashboard Component
+Purpose:
+Displays a dashboard layout for widgets.
 
-## Build
+Functionality:
+Fetches and displays a list of widgets from the server.
+Utilizes Widget Card Component to render each widget.
+Auto change grid based on screen size.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Services
+1. Widget Rest Service
+The Widget Rest Service (widget-rest.service) is responsible for fetching widget data from a RESTful API.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Active Badge Service
+The Active Badge Service (active-badge.service) is responsible for manage one only active card.
