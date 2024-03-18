@@ -48,14 +48,14 @@ export class WidgetCardComponent implements OnInit {
     console.log("showTooltip")
     clearTimeout(this.hideTimeout);
     this.showTimeout = setTimeout(() => {
-        document.getElementById("tooltip")?.classList.add("show");
+        document.getElementById("tooltip" + this.card.id)?.classList.add("show");
     }, 200);
 }
 
 hideTooltip(): void {
     clearTimeout(this.showTimeout);
     this.hideTimeout = setTimeout(() => {
-        document.getElementById("tooltip")?.classList.remove("show");
+        document.getElementById("tooltip" + this.card.id)?.classList.remove("show");
     }, 300);
 }
 }
